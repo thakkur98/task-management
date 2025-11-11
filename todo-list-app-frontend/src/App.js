@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Navigation from "./Navigation/Navigation";
 function App() {
   return (
