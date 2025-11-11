@@ -53,6 +53,7 @@ const Signup = () => {
 
         localStorage.setItem("token", data.token);
          localStorage.setItem("userName", data.user.name);
+         localStorage.setItem("userRole", data.user.role);
         Navigate("/");
       } catch (error) {
         console.error("Signup Error:", error.message);
@@ -62,6 +63,13 @@ const Signup = () => {
 
   return (
     <SignupStyled>
+      <head>
+        <title>Sign Up | Create Account | Task Management App</title>
+        <meta name="description" content="Create your account to start managing tasks efficiently with our task management app. Fast, secure, and easy signup." />
+        <meta name="keywords" content="signup, create account, register, task manager signup, todo app signup" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <div className="form-container">
         <form onSubmit={formik.handleSubmit}>
           <h2>Sign Up</h2>

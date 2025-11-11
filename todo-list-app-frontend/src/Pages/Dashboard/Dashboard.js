@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [editOrAdd , setEditOrAdd] = useState("");
   const [userDetail , setUserDetail] = useState("");
   const [theme , setTheme] = useState("Light");
+  const [role , setRole] = useState("");
   const handleEdit = (task) => {
     console.log(task);
     setOpenAdd(true);
@@ -22,6 +23,8 @@ const Dashboard = () => {
       const token = localStorage.getItem("token");
       const userName = localStorage.getItem("userName");
       userName && setUserDetail(userName);
+      const userRole = localStorage.getItem("userRole");
+      setRole(userRole);
       const response = await fetch("http://localhost:5000/api/tasks", {
         method: "GET",
         headers: {
@@ -88,6 +91,12 @@ const Dashboard = () => {
     <>
       <Header userDetail={userDetail} setTheme={setTheme} theme={theme}/>
       <DashboardStyle  theme={theme}>
+        <head>
+          <title>Dashboard | Task Management App</title>
+          <meta name="description" content="View, manage, and track all your tasks efficiently on the Task Management Dashboard. Organized, fast, and user-friendly." />
+          <meta name="keywords" content="task dashboard, task manager, productivity app, todo app, task tracker" />          
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </head>
         <div className="dashboard-header">
           <h2>Task</h2>
           <button onClick ={ handleAddTask}className="add-task-btn">+ Add Task</button>
@@ -112,12 +121,12 @@ const Dashboard = () => {
                 <button className="edit" onClick={() => handleEdit(task)}>
                   Edit
                 </button>
-                <button
+               {role === "admin" && <button
                   className="delete"
                   onClick={() => handleDelete(task._id)}
                 >
                   Delete
-                </button>
+                </button>}
               </div>
             </div>
           ))}

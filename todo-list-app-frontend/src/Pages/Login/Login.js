@@ -33,7 +33,7 @@ const Login = () => {
         const data = await response.json();
 
         if (!response.ok) {
-          throw new Error(data.message || "Login failed");
+           Navigate("/signup");
         }
 
         console.log("Login Success:", data);
@@ -41,6 +41,7 @@ const Login = () => {
         // Save token for protected API calls
         localStorage.setItem("token", data.token);
         localStorage.setItem("userName", data.user.name);
+         localStorage.setItem("userRole", data.user.role);
 
         // Navigate to Dashboard
         Navigate("/");
@@ -53,6 +54,13 @@ const Login = () => {
 
   return (
     <LoginStyled>
+      <head>
+        <title>Login | Task Management App</title>
+        <meta name="description" content="Login to your Task Management account to access your dashboard and manage your tasks easily." />
+        <meta name="keywords" content="login, user login, task manager login, todo app login" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <div className="form-container">
         <form onSubmit={formik.handleSubmit}>
           <h2>Login</h2>
