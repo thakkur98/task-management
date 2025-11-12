@@ -13,7 +13,6 @@ const Dashboard = () => {
   const [theme , setTheme] = useState("Light");
   const [role , setRole] = useState("");
   const handleEdit = (task) => {
-    console.log(task);
     setOpenAdd(true);
     setEditOrAdd("Edit");
     setEditTask(task);
@@ -77,6 +76,7 @@ const Dashboard = () => {
   const handleAddTask = () =>{
       setOpenAdd(true);
       setEditOrAdd("Add");
+      setEditTask(""); 
   }
   if(!userDetail){
     return( 
