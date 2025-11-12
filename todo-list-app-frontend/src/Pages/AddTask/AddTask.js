@@ -17,6 +17,7 @@ const AddTask = ({
       description: editTask ? editTask.description : "",
       status: editTask ? editTask.status : "Pending",
     },
+     enableReinitialize: true,
     validationSchema: Yup.object({
       title: Yup.string().required("Title is required"),
       description: Yup.string().required("Description is required"),
@@ -111,7 +112,7 @@ const AddTask = ({
         <div className="form-group">
           <label>Status</label>
           <select
-            // name="status"
+            name="status"
             value={formik.values.status}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
