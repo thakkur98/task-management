@@ -24,7 +24,7 @@ const Dashboard = () => {
       userName && setUserDetail(userName);
       const userRole = localStorage.getItem("userRole");
       setRole(userRole);
-      const response = await fetch("https://task-management-4-rdu9.onrender.com/api/tasks", {
+      const response = await fetch("https://task-management-7-z2df.onrender.com/api/tasks", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const Dashboard = () => {
      try {
     const token = localStorage.getItem("token"); 
 
-    const response = await fetch(`https://task-management-4-rdu9.onrender.com/api/tasks/${id}`, {
+    const response = await fetch(`https://task-management-7-z2df.onrender.com/api/tasks/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
