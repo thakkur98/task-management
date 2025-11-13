@@ -27,7 +27,7 @@ const Signup = () => {
     }),
     onSubmit: async (values) => {
       try {
-        const response = await fetch("https://task-management-7-z2df.onrender.com/api/auth/signup", {
+        const response = await fetch("https://task-management-8-6pps.onrender.com/api/auth/signup", {
           method: "POST",
           mode: "cors",
           headers: {

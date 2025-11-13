@@ -28,8 +28,8 @@ const AddTask = ({
         const token = localStorage.getItem("token");
 
         if (editTask) {
-          const response = await fetch(
-            `https://task-management-7-z2df.onrender.com/api/tasks/${editTask._id}`,
+          const response = await fetch( 
+            `https://task-management-8-6pps.onrender.com/api/tasks/${editTask._id}`,
             {
               method: "PUT",
               headers: {
@@ -52,7 +52,7 @@ const AddTask = ({
           );
           setTasks(updatedTasks);
         } else {
-          const response = await fetch(`https://task-management-7-z2df.onrender.com/api/tasks`, {
+          const response = await fetch(`https://task-management-8-6pps.onrender.com/api/tasks`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
