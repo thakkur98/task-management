@@ -29,7 +29,7 @@ const AddTask = ({
 
         if (editTask) {
           const response = await fetch(
-            `http://localhost:5000/api/tasks/${editTask._id}`,
+            `https://task-management-4-rdu9.onrender.com/api/tasks/${editTask._id}`,
             {
               method: "PUT",
               headers: {
@@ -52,7 +52,7 @@ const AddTask = ({
           );
           setTasks(updatedTasks);
         } else {
-          const response = await fetch(`http://localhost:5000/api/tasks`, {
+          const response = await fetch(`https://task-management-4-rdu9.onrender.com/api/tasks`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
