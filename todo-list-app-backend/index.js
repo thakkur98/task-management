@@ -4,13 +4,19 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 
 import authRoutes from "./routes/auth.js";
-import taskRoutes from "./routes/task.js";  // To this
+import taskRoutes from "./routes/task.js";  
 
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://task-management-delta-ecru.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
