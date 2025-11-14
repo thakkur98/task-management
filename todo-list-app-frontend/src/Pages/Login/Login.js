@@ -21,7 +21,7 @@ const Login = () => {
     }),
     onSubmit: async (values) => {
        try {
-        const response = await fetch("https://task-management-10-r6hg.onrender.com/api/auth/login", {
+        const response = await fetch("https://task-management-ih6k.vercel.app/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

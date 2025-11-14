@@ -29,7 +29,7 @@ const AddTask = ({
 
         if (editTask) {
           const response = await fetch( 
-            `https://task-management-10-r6hg.onrender.com/api/tasks/${editTask._id}`,
+            `https://task-management-ih6k.vercel.app/api/tasks/${editTask._id}`,
             {
               method: "PUT",
               headers: {
@@ -52,7 +52,7 @@ const AddTask = ({
           );
           setTasks(updatedTasks);
         } else {
-          const response = await fetch(`https://task-management-10-r6hg.onrender.com/api/tasks`, {
+          const response = await fetch(`https://task-management-ih6k.vercel.app/api/tasks`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
